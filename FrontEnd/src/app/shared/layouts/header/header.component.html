@@ -226,22 +226,32 @@
     <!-- Right Section -->
     <div class="w-full header-info-card lg:w-auto">
       <div class="flex flex-col gap-3 header-contact-info">
-        <div class="flex gap-3 items-center contact-channel">
+        <a
+          href="tel:+201203643737"
+          class="flex gap-3 items-center contact-channel"
+          aria-label="Call Trust Medical"
+        >
           <span class="contact-channel-icon">
             <i class="fa-solid fa-phone"></i>
           </span>
           <p class="text-sm font-semibold md:text-base">
             {{ "HEADER.CONTACT.PHONE_NUMBERS" | translate }}
           </p>
-        </div>
-        <div class="flex gap-3 items-center contact-channel">
+        </a>
+        <a
+          href="https://wa.me/201203643737"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex gap-3 items-center contact-channel"
+          aria-label="Chat with Trust Medical on WhatsApp"
+        >
           <span class="contact-channel-icon whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
           </span>
           <p class="text-sm font-semibold md:text-base">
             {{ "HEADER.CONTACT.WHATSAPP_NUMBERS" | translate }}
           </p>
-        </div>
+        </a>
       </div>
     </div>
   </div>
