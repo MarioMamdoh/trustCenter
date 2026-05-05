@@ -1,0 +1,185 @@
+<section class="m-auto about">
+  <section>
+    <div class="container m-auto mt-5 mb-10 sm:mb-16 md:mb-20 about-header">
+      <h1 class="flex justify-center items-center h-20 sm:h-24 md:h-32 dg">
+        <span
+          class="z-10 px-4 text-2xl font-bold text-center text-white sm:text-4xl md:text-5xl lg:text-6xl"
+          >{{ "ABOUT_US.TITLE" | translate }}</span
+        >
+      </h1>
+    </div>
+    <div
+      class="container flex flex-col gap-8 justify-between px-4 m-auto lg:flex-row about-intro lg:gap-12 sm:px-6 lg:px-8"
+    >
+      <div class="w-full img lg:w-1/2 max-lg:order-2 lg:order-1">
+        <img
+          src="assets/introAboutUs.jpg"
+          class="w-full h-auto max-h-[500px] sm:max-h-[600px] md:max-h-[700px] lg:max-h-[750px] object-cover rounded-lg shadow-lg"
+          alt="About Us Introduction"
+        />
+      </div>
+      <div class="flex-1 w-full content lg:w-1/2 max-lg:order-1 lg:order-2">
+        <h2
+          class="mb-8 text-2xl font-semibold text-center text-gray-800 sm:text-3xl md:text-4xl sm:mb-12"
+        >
+          {{ "ABOUT_US.INTRO.TITLE" | translate }}
+        </h2>
+        <div class="space-y-6 content-goals sm:space-y-8">
+          <div class="our-mission">
+            <h3 class="mb-3 text-xl sm:text-2xl font-medium text-[#085993]">
+              {{ "ABOUT_US.INTRO.MISSION.TITLE" | translate }}
+            </h3>
+            <p
+              class="text-base font-light leading-relaxed text-gray-700 sm:text-lg"
+            >
+              {{ "ABOUT_US.INTRO.MISSION.DESCRIPTION" | translate }}
+            </p>
+          </div>
+          <div class="our-vision">
+            <h3 class="mb-3 text-xl sm:text-2xl font-medium text-[#085993]">
+              {{ "ABOUT_US.INTRO.VISION.TITLE" | translate }}
+            </h3>
+            <p
+              class="text-base font-light leading-relaxed text-gray-700 sm:text-lg"
+            >
+              {{ "ABOUT_US.INTRO.VISION.DESCRIPTION" | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div
+      class="bg-[#f4f8fb] p-4 sm:p-6 md:p-8 mt-10 sm:mt-16 md:mt-20 features-section"
+    >
+      <div class="container p-4 m-auto sm:p-6 md:p-8">
+        <div
+          class="flex flex-col gap-8 justify-between mb-8 lg:flex-row sm:mb-10 lg:gap-12"
+        >
+          <div class="w-full text-center lg:w-1/2 lg:text-left">
+            <i
+              class="block mb-4 sm:mb-5 text-4xl sm:text-5xl md:text-6xl text-center fa-solid fa-house-medical text-[#1b9ed2]"
+            ></i>
+            <h3
+              class="mb-3 text-2xl font-semibold text-center text-gray-800 sm:text-3xl lg:text-left"
+            >
+              {{ "ABOUT_US.FEATURES.AFFORDABLE_CARE.TITLE" | translate }}
+            </h3>
+            <p
+              class="text-sm font-light leading-relaxed text-gray-700 sm:text-base"
+            >
+              {{ "ABOUT_US.FEATURES.AFFORDABLE_CARE.DESCRIPTION" | translate }}
+            </p>
+          </div>
+          <div class="w-full text-center lg:w-1/2 lg:text-left">
+            <i
+              class="block mb-4 sm:mb-5 text-4xl sm:text-5xl md:text-6xl text-center fa-solid fa-people-group text-[#1b9ed2]"
+            ></i>
+            <h3
+              class="mb-3 text-2xl font-semibold text-center text-gray-800 sm:text-3xl lg:text-left"
+            >
+              {{ "ABOUT_US.FEATURES.AMAZING_TEAM.TITLE" | translate }}
+            </h3>
+            <p
+              class="text-sm font-light leading-relaxed text-gray-700 sm:text-base"
+            >
+              {{ "ABOUT_US.FEATURES.AMAZING_TEAM.DESCRIPTION" | translate }}
+            </p>
+          </div>
+        </div>
+
+        <div class="m-auto max-w-[1000px] container">
+          <div
+            class="flex flex-col justify-center items-center mb-6 sm:flex-row sm:justify-start sm:mb-8"
+          >
+            <i
+              class="mb-3 sm:mb-5 text-3xl sm:text-4xl fa-solid fa-laptop-medical text-[#1b9ed2]"
+            ></i>
+            <h3
+              class="mb-0 text-2xl font-semibold text-center text-gray-800 sm:ml-3 sm:text-3xl md:text-4xl sm:text-left"
+            >
+              {{ "ABOUT_US.FEATURES.SPECIALTY.TITLE" | translate }}
+            </h3>
+          </div>
+
+          <div
+            class="flex flex-col gap-6 justify-between items-start lg:flex-row lg:items-center lg:gap-8"
+          >
+            <div class="container m-auto w-full lg:w-1/2">
+              <p class="text-sm leading-relaxed text-gray-700 sm:text-base">
+                <span class="text-[#085993] text-lg sm:text-xl mr-2"
+                  >&RightTriangle;</span
+                >{{
+                  "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.TITLE" | translate
+                }}
+                <span class="block mt-2 ml-6 font-light sm:ml-10">
+                  <span class="text-[#1b9ed2] text-lg sm:text-xl mr-2"
+                    >&rightarrow;</span
+                  >{{
+                    "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.BRAIN_NERVES"
+                      | translate
+                  }}
+                </span>
+                <span class="block mt-1 ml-6 font-light sm:ml-10">
+                  <span class="text-[#1b9ed2] text-lg sm:text-xl mr-2"
+                    >&rightarrow;</span
+                  >{{
+                    "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.LIVER_DIGESTIVE"
+                      | translate
+                  }}
+                </span>
+                <span class="block mt-1 ml-6 font-light sm:ml-10">
+                  <span class="text-[#1b9ed2] text-lg sm:text-xl mr-2"
+                    >&rightarrow;</span
+                  >{{
+                    "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.HEART_CHEST"
+                      | translate
+                  }}
+                </span>
+                <span class="block mt-1 ml-6 font-light sm:ml-10">
+                  <span class="text-[#1b9ed2] text-lg sm:text-xl mr-2"
+                    >&rightarrow;</span
+                  >{{
+                    "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.GERIATRIC"
+                      | translate
+                  }}
+                </span>
+                <span class="block mt-1 ml-6 font-light sm:ml-10">
+                  <span class="text-[#1b9ed2] text-lg sm:text-xl mr-2"
+                    >&rightarrow;</span
+                  >{{
+                    "ABOUT_US.FEATURES.SPECIALTY.INTENSIVE_CARE.DIABETIC_COMA"
+                      | translate
+                  }}
+                </span>
+              </p>
+            </div>
+            <div class="w-full lg:w-1/2">
+              <p class="mb-3 text-sm text-gray-700 sm:text-base">
+                <span class="text-[#085993] text-lg sm:text-xl mr-2"
+                  >&RightTriangle;</span
+                >{{ "ABOUT_US.FEATURES.SPECIALTY.OPERATING_ROOMS" | translate }}
+              </p>
+              <p class="mb-3 text-sm text-gray-700 sm:text-base">
+                <span class="text-[#085993] text-lg sm:text-xl mr-2"
+                  >&RightTriangle;</span
+                >{{ "ABOUT_US.FEATURES.SPECIALTY.POST_OPERATIVE" | translate }}
+              </p>
+              <p class="text-sm text-gray-700 sm:text-base">
+                <span class="text-[#085993] text-lg sm:text-xl mr-2"
+                  >&RightTriangle;</span
+                >{{ "ABOUT_US.FEATURES.SPECIALTY.AMBULANCE" | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-8 sm:mt-10">
+    <app-achievement></app-achievement>
+  </section>
+</section>

@@ -1,0 +1,118 @@
+section {
+  @apply min-h-[calc(100vh-64px)] p-4;
+
+  .add-offer {
+    @apply bg-[var(--project-secondary-color)] w-[300px] max-w-full text-center m-auto my-5 text-white p-3 rounded-md shadow;
+  }
+
+  .form {
+    @apply max-w-4xl mx-auto;
+
+    .forms-control {
+      @apply flex gap-10 justify-between;
+      @apply flex-col md:flex-row md:gap-10;
+
+      .col-1 {
+        @apply self-center p-4 w-full bg-white shadow-sm h-fit;
+      }
+    }
+
+    .form-control {
+      @apply mb-4;
+
+      label {
+        @apply block mb-2 text-sm font-medium text-gray-700;
+      }
+
+      input,
+      textarea {
+        @apply block p-2 mt-2 w-full shadow-md outline-none;
+      }
+
+      input {
+        @apply h-9;
+      }
+
+      textarea {
+        @apply h-32 resize-none;
+      }
+    }
+
+    .content {
+      @apply overflow-x-auto max-w-full;
+
+      .form-control {
+        @apply mt-10;
+
+        .content-fields {
+          display: flex;
+          gap: 1rem;
+          flex-direction: row;
+        }
+        @media (max-width: 1024px) {
+          .content-fields {
+            flex-direction: column;
+            gap: 1rem;
+          }
+        }
+      }
+    }
+
+    .btns {
+      @apply flex flex-col gap-4 justify-center py-2 mt-16 text-center sm:flex-row;
+
+      button {
+        @apply px-4 py-2 rounded transition-all duration-200;
+
+        &[type="submit"] {
+          @apply text-white bg-[--project-primary-color] hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed;
+        }
+
+        &[type="button"] {
+          @apply text-black bg-yellow-300 hover:bg-gray-600;
+        }
+      }
+    }
+  }
+
+  // Responsive design
+  @media (max-width: 1024px) {
+    @apply p-2;
+    .add-offer {
+      @apply w-full max-w-sm;
+    }
+    .form {
+      .forms-control {
+        @apply flex-col gap-4;
+      }
+      .btns {
+        @apply flex-col;
+        button {
+          @apply w-full;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .add-offer {
+      @apply text-base p-2;
+    }
+    .form {
+      @apply p-1;
+      .form-control label {
+        @apply text-xs;
+      }
+      .form-control input,
+      .form-control textarea {
+        @apply text-xs p-1;
+      }
+      .btns button {
+        @apply text-xs px-2 py-1;
+      }
+      .content-fields {
+        gap: 0.5rem;
+      }
+    }
+  }
+}

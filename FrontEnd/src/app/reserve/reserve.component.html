@@ -1,0 +1,46 @@
+<section class="container pb-5 mx-auto mt-10 h-full bg-white shadow-xl">
+  <div class="text-center">
+    <label class="block mr-5 mb-5 text-2xl font-light">
+      {{ "RESERVE.SELECT_AREA" | translate }}
+    </label>
+    <select
+      class="w-28 border-2 border-solid cursor-pointer"
+      (change)="selected($event)"
+    >
+      <option value="none"></option>
+      <option value="Giza">{{ "RESERVE.GIZA" | translate }}</option>
+      <option value="Cairo">{{ "RESERVE.CAIRO" | translate }}</option>
+    </select>
+    @if(!IsThereFreeBed && isSelected){
+    <div class="mt-5 text-xl">
+      <p class="text-red-500">{{ "RESERVE.NO_BEDS" | translate }}</p>
+    </div>
+    } @if(IsThereFreeBed && isSelected){
+
+    <div class="mt-5 text-xl">
+      <p class="mb-2">
+        {{ "RESERVE.CONTACT_US" | translate }}
+        <span class="text-green-600">{{
+          "RESERVE.PHONE_NUMBERS" | translate
+        }}</span>
+      </p>
+      <p>
+        {{ "RESERVE.LOCATION" | translate }}
+        @if(selectedArea === "Giza"){
+        <span class="text-green-600">{{
+          "RESERVE.LOCATION_ADDRESS_GIZA" | translate
+        }}</span>
+        } @if(selectedArea === "Cairo"){
+        <span class="block text-green-600">
+          {{ "RESERVE.LOCATION_ADDRESS_CAIRO_Masr_Elgedida" | translate }}</span
+        >
+        <span class="block text-green-600">{{
+          "RESERVE.LOCATION_ADDRESS_CAIRO_Elmokattam" | translate
+        }}</span>
+
+        }
+      </p>
+    </div>
+    }
+  </div>
+</section>

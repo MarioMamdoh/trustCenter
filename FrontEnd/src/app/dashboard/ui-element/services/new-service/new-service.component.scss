@@ -1,0 +1,85 @@
+section {
+  height: calc(100vh - 64px);
+  padding: 20px;
+  overflow-y: auto;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 10px;
+  }
+
+  .add-service {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+  }
+
+  .grid {
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .col-1 {
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .form-control {
+        @media screen and (max-width: 768px) {
+          margin-bottom: 1.5rem;
+        }
+
+        label {
+          @media screen and (max-width: 480px) {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        input,
+        textarea {
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+        }
+
+        textarea {
+          @media screen and (max-width: 768px) {
+            height: 120px;
+          }
+        }
+
+        .text-red-500 {
+          @media screen and (max-width: 480px) {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .btns {
+        @media screen and (max-width: 480px) {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          button {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

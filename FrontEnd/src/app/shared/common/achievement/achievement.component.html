@@ -1,0 +1,57 @@
+<app-section-heading
+  [section]="'ACHIEVEMENT.TITLE' | translate"
+></app-section-heading>
+<div>
+  <div
+    class="container grid grid-cols-4 gap-5 m-auto max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:max-w-fit max-sm:gap-10"
+  >
+    <div
+      class="bg-[#202e3a] text-center text-white p-5 rounded-2xl hover:-translate-y-6 transition-all duration-700"
+    >
+      <i class="mb-2 text-3xl fa-solid fa-hands-holding-child"></i>
+      <h3 class="mb-2 text-xl font-bold">
+        {{ "ACHIEVEMENT.SERVED.TITLE" | translate }}
+      </h3>
+      <p class="mb-1 text-lg">{{ achievementData[0]["count"] }}</p>
+      <p class="text-lg font-light">
+        {{ "ACHIEVEMENT.SERVED.COUNT" | translate }}
+      </p>
+    </div>
+    <div
+      class="bg-[#202e3a] text-center text-white p-5 rounded-2xl hover:-translate-y-6 transition-all duration-700"
+    >
+      <i class="mb-2 text-3xl fa-solid fa-users"></i>
+      <h3 class="mb-2 text-xl font-bold">
+        {{ "ACHIEVEMENT.TEAM.TITLE" | translate }}
+      </h3>
+      <p class="mb-1 text-lg">{{ achievementData[1]["count"] }}</p>
+      <p class="text-lg font-light">
+        {{ "ACHIEVEMENT.TEAM.COUNT" | translate }}
+      </p>
+    </div>
+    <div
+      class="bg-[#202e3a] text-center text-white p-5 rounded-2xl hover:-translate-y-6 transition-all duration-700"
+    >
+      <i class="mb-2 text-3xl fa-solid fa-circle-check"></i>
+      <h3 class="mb-2 text-xl font-bold">
+        {{ "ACHIEVEMENT.EXPERIENCE.TITLE" | translate }}
+      </h3>
+      <p class="mb-1 text-lg">{{ achievementData[2]["count"] }}</p>
+      <p class="text-lg font-light">
+        {{ "ACHIEVEMENT.EXPERIENCE.COUNT" | translate }}
+      </p>
+    </div>
+    <div
+      class="bg-[#202e3a] text-center text-white p-5 rounded-2xl hover:-translate-y-6 transition-all duration-700"
+    >
+      <i class="mb-2 text-3xl fa-solid fa-truck-medical"></i>
+      <h3 class="mb-2 text-xl font-bold">
+        {{ "ACHIEVEMENT.AMBULANCE.TITLE" | translate }}
+      </h3>
+      <p class="mb-1 text-lg">{{ achievementData[3]["count"] }}</p>
+      <p class="text-lg font-light">
+        {{ "ACHIEVEMENT.AMBULANCE.COUNT" | translate }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,317 @@
+<section>
+  <div
+    class="add-service bg-[var(--project-secondary-color)] w-[300px] text-center m-auto my-5 text-white p-3 rounded-md shadow"
+  >
+    <p class="text-3xl font-semibold animate-pulse">{{ formStatus }} Service</p>
+  </div>
+  <div class="flex justify-center">
+    <div class="flex gap-10 mb-8">
+      <button
+        class="bg-[var(--project-secondary-color)] text-white p-3 rounded-md hover:bg-[var(--project-text-color)] transition-all"
+        (click)="onLanguageChange('en')"
+      >
+        English
+      </button>
+      <button
+        class="bg-[var(--project-secondary-color)] text-white p-3 rounded-md hover:bg-[var(--project-text-color)] transition-all"
+        (click)="onLanguageChange('ar')"
+      >
+        العربية
+      </button>
+    </div>
+  </div>
+
+  <!-- Enhanced Image Section -->
+  <div class="flex justify-center px-4 mb-8 sm:px-6 lg:px-8">
+    <div
+      class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl"
+    >
+      <div class="overflow-hidden bg-white rounded-lg shadow-lg">
+        <!-- Image Preview Container -->
+        <div class="relative group">
+          <div
+            class="overflow-hidden relative w-full h-48 bg-gray-100 rounded-t-lg sm:h-56 md:h-64 lg:h-72 xl:h-80"
+          >
+            <img
+              [src]="imgUrl"
+              alt="Service Image"
+              class="object-cover w-full h-full transition-all duration-300 group-hover:scale-105"
+            />
+            <!-- Overlay for drag and drop feedback -->
+            <div
+              class="flex absolute inset-0 justify-center items-center bg-black bg-opacity-0 transition-all duration-300 group-hover:bg-opacity-10"
+            ></div>
+          </div>
+
+          <!-- Image Upload Area -->
+          <div
+            class="p-3 bg-gray-50 border-t border-gray-200 sm:p-4 md:p-5 lg:p-6"
+          >
+            <div
+              class="flex flex-col space-y-3 sm:flex-row sm:justify-between sm:items-center sm:space-y-0"
+            >
+              <div class="flex-1">
+                <label class="block mb-2 text-sm font-medium text-gray-700">
+                  Service Image
+                </label>
+                <div
+                  class="flex flex-col space-y-3 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4"
+                >
+                  <div class="flex-1">
+                    <input
+                      type="file"
+                      class="hidden"
+                      id="imageInput"
+                      (change)="onImageChange($event)"
+                      accept="image/*"
+                      [value]="selectedImg ? '' : ''"
+                    />
+                    <label
+                      for="imageInput"
+                      class="flex justify-center items-center px-3 py-2 sm:px-4 sm:py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm transition-all duration-200 cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      <svg
+                        class="mr-2 w-4 h-4 sm:w-5 sm:h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        ></path>
+                      </svg>
+                      <span class="hidden sm:inline">{{
+                        selectedImg ? "Change Image" : "Choose Image"
+                      }}</span>
+                      <span class="sm:hidden">{{
+                        selectedImg ? "Change" : "Upload"
+                      }}</span>
+                    </label>
+                  </div>
+                  @if(imageValid){
+                  <div class="flex items-center text-green-600">
+                    <svg
+                      class="mr-1 w-4 h-4 sm:w-5 sm:h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span class="text-xs font-medium sm:text-sm">
+                      <span class="hidden sm:inline">Image selected</span>
+                      <span class="sm:hidden">Selected</span>
+                    </span>
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Validation Message -->
+            @if(!imageValid){
+            <div class="flex items-center mt-3 text-red-600">
+              <svg class="mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span class="text-xs sm:text-sm">
+                <span class="hidden sm:inline"
+                  >Image is required for both English and Arabic forms</span
+                >
+                <span class="sm:hidden">Image required</span>
+              </span>
+            </div>
+            }
+
+            <!-- Image Info -->
+            @if(imageValid && selectedImg){
+            <div class="p-2 mt-3 bg-blue-50 rounded-md sm:p-3">
+              <div
+                class="flex flex-col space-y-1 sm:flex-row sm:justify-between sm:items-center sm:space-y-0"
+              >
+                <div class="flex items-center">
+                  <svg
+                    class="mr-2 w-4 h-4 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span
+                    class="text-xs font-medium text-blue-800 truncate sm:text-sm"
+                  >
+                    {{ selectedImg.name }}
+                  </span>
+                </div>
+                <span class="text-xs text-blue-600">
+                  {{ (selectedImg.size / 1024 / 1024).toFixed(2) }} MB
+                </span>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form">
+    @if(language === 'en'){
+    <form [formGroup]="serviceFormEn" (ngSubmit)="onSubmit()">
+      <div class="flex gap-10 justify-between forms-control max-lg:flex-col">
+        <div class="self-center p-4 w-full bg-white shadow-sm h-fit col-1">
+          <div class="mb-16 form-control">
+            <label>Title</label>
+            <input
+              type="text"
+              class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+              [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': serviceFormEn.get('title')?.errors?.['required'] && serviceFormEn.get('title')?.touched}"
+              placeholder="Title"
+              formControlName="title"
+            />
+            @if(serviceFormEn.get('title')?.errors?.['required'] &&
+            serviceFormEn.get('title')?.touched){
+            <div class="mt-2 text-red-500">Title is required.</div>
+            }
+          </div>
+          <div class="mb-4 form-control">
+            <label>Excerpt</label>
+            <textarea
+              type="text"
+              class="block p-2 mt-2 w-full h-32 shadow-md outline-none"
+              [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': serviceFormEn.get('excerpt')?.errors?.['required'] && serviceFormEn.get('excerpt')?.touched }"
+              placeholder="Summary"
+              formControlName="excerpt"
+            ></textarea>
+            @if(serviceFormEn.get('excerpt')?.errors?.['required'] &&
+            serviceFormEn.get('excerpt')?.touched){
+            <div class="mt-2 text-red-500">Excerpt is required.</div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="mt-10 form-control">
+          @if (serviceFormEn.get('editorContent')?.errors?.['required'] &&
+          serviceFormEn.get('editorContent')?.touched) {
+          <div class="mt-2 text-red-500">Content is required.</div>
+          }
+          <div class="bg-white border-4 border-solid content border-y-black">
+            <label class="p-2">Content</label>
+            <div class="mt-2 min-h-[350px] shadow-md NgxEditor__Wrapper editor">
+              <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+              </ngx-editor-menu>
+              <ngx-editor [editor]="editor" formControlName="editorContent">
+              </ngx-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2 mt-16 text-center btns">
+        <!-- Buttons -->
+        <button
+          type="submit"
+          class="px-4 py-2 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          [disabled]="!areFormsValid()"
+        >
+          Submit
+        </button>
+
+        <button
+          type="button"
+          class="px-4 py-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          (click)="resetForm()"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+    } @if(language === 'ar'){
+    <form [formGroup]="serviceFormAr" (ngSubmit)="onSubmit()">
+      <div class="flex gap-10 justify-between forms-control max-lg:flex-col">
+        <div class="self-center p-4 w-full bg-white shadow-sm h-fit col-1">
+          <div class="mb-16 form-control">
+            <label>العنوان</label>
+            <input
+              type="text"
+              class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+              [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': serviceFormAr.get('title')?.errors?.['required'] && serviceFormAr.get('title')?.touched}"
+              placeholder="العنوان"
+              formControlName="title"
+            />
+            @if(serviceFormAr.get('title')?.errors?.['required'] &&
+            serviceFormAr.get('title')?.touched){
+            <div class="mt-2 text-red-500">العنوان مطلوب.</div>
+            }
+          </div>
+          <div class="mb-4 form-control">
+            <label>الملخص</label>
+            <textarea
+              type="text"
+              class="block p-2 mt-2 w-full h-32 shadow-md outline-none"
+              [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': serviceFormAr.get('excerpt')?.errors?.['required'] && serviceFormAr.get('excerpt')?.touched }"
+              placeholder="الملخص"
+              formControlName="excerpt"
+            ></textarea>
+            @if(serviceFormAr.get('excerpt')?.errors?.['required'] &&
+            serviceFormAr.get('excerpt')?.touched){
+            <div class="mt-2 text-red-500">الملخص مطلوب.</div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="mt-10 form-control">
+          @if (serviceFormAr.get('editorContent')?.errors?.['required'] &&
+          serviceFormAr.get('editorContent')?.touched) {
+          <div class="mt-2 text-red-500">المحتوى مطلوب.</div>
+          }
+          <div class="bg-white border-4 border-solid content border-y-black">
+            <label class="p-2">المحتوى</label>
+            <div class="mt-2 min-h-[350px] shadow-md NgxEditor__Wrapper editor">
+              <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+              </ngx-editor-menu>
+              <ngx-editor [editor]="editor" formControlName="editorContent">
+              </ngx-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2 mt-16 text-center btns">
+        <!-- Buttons -->
+        <button
+          type="submit"
+          class="px-4 py-2 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          [disabled]="!areFormsValid()"
+        >
+          Submit
+        </button>
+
+        <button
+          type="button"
+          class="px-4 py-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          (click)="resetForm()"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+    }
+  </div>
+</section>

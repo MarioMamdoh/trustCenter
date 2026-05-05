@@ -1,0 +1,170 @@
+<section>
+  <div
+    class="add-offer bg-[var(--project-secondary-color)] w-[300px] max-w-full text-center m-auto my-5 text-white p-3 rounded-md shadow"
+  >
+    <p class="text-3xl font-semibold animate-pulse">{{ formStatus }} Offer</p>
+  </div>
+
+  <div class="form">
+    <form [formGroup]="offerForm" (ngSubmit)="onSubmit()">
+      <div class="flex gap-10 justify-between forms-control max-lg:flex-col">
+        <div class="self-center p-4 w-full bg-white shadow-sm h-fit col-1">
+          <!-- Name Fields - Side by Side -->
+          <div class="mb-4 form-control">
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label>Name of the Offer (English)</label>
+                <input
+                  type="text"
+                  class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+                  [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': offerForm.get('nameEn')?.errors?.['required'] && offerForm.get('nameEn')?.touched}"
+                  placeholder="Name of the Offer (English)"
+                  formControlName="nameEn"
+                />
+                @if(offerForm.get('nameEn')?.errors?.['required'] &&
+                offerForm.get('nameEn')?.touched){
+                <div class="mt-2 text-red-500">Name is required.</div>
+                }
+              </div>
+              <div class="flex-1">
+                <label>اسم العرض (العربية)</label>
+                <input
+                  type="text"
+                  class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+                  [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': offerForm.get('nameAr')?.errors?.['required'] && offerForm.get('nameAr')?.touched}"
+                  placeholder="اسم العرض (العربية)"
+                  formControlName="nameAr"
+                />
+                @if(offerForm.get('nameAr')?.errors?.['required'] &&
+                offerForm.get('nameAr')?.touched){
+                <div class="mt-2 text-red-500">الاسم مطلوب.</div>
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Percentage Field -->
+          <div class="mb-4 form-control">
+            <label>Percentage of the Offer</label>
+            <input
+              type="number"
+              class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+              [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': offerForm.get('percentage')?.errors?.['required'] && offerForm.get('percentage')?.touched}"
+              placeholder="Percentage (0-100)"
+              formControlName="percentage"
+              min="0"
+              max="100"
+            />
+            @if(offerForm.get('percentage')?.errors?.['required'] &&
+            offerForm.get('percentage')?.touched){
+            <div class="mt-2 text-red-500">Percentage is required.</div>
+            } @if(offerForm.get('percentage')?.errors?.['min'] &&
+            offerForm.get('percentage')?.touched){
+            <div class="mt-2 text-red-500">Percentage must be at least 0.</div>
+            } @if(offerForm.get('percentage')?.errors?.['max'] &&
+            offerForm.get('percentage')?.touched){
+            <div class="mt-2 text-red-500">Percentage cannot exceed 100.</div>
+            }
+          </div>
+
+          <!-- Date Fields -->
+          <div class="mb-4 form-control">
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label>Start Date</label>
+                <input
+                  type="date"
+                  class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+                  [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': offerForm.get('startOfferDate')?.errors?.['required'] && offerForm.get('startOfferDate')?.touched}"
+                  formControlName="startOfferDate"
+                />
+                @if(offerForm.get('startOfferDate')?.errors?.['required'] &&
+                offerForm.get('startOfferDate')?.touched){
+                <div class="mt-2 text-red-500">Start date is required.</div>
+                }
+              </div>
+              <div class="flex-1">
+                <label>End Date</label>
+                <input
+                  type="date"
+                  class="block p-2 mt-2 w-full h-9 shadow-md outline-none"
+                  [ngClass]="{ 'border-r-red-600 border-r-solid border-r-4 ': offerForm.get('endOfferDate')?.errors?.['required'] && offerForm.get('endOfferDate')?.touched}"
+                  formControlName="endOfferDate"
+                />
+                @if(offerForm.get('endOfferDate')?.errors?.['required'] &&
+                offerForm.get('endOfferDate')?.touched){
+                <div class="mt-2 text-red-500">End date is required.</div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Fields - Side by Side -->
+      <div class="overflow-x-auto max-w-full content">
+        <div class="mt-10 form-control">
+          <div class="flex gap-4 content-fields">
+            <div class="flex-1">
+              <label class="p-2">Content of the Offer (English)</label>
+              @if (offerForm.get('contentEn')?.errors?.['required'] &&
+              offerForm.get('contentEn')?.touched) {
+              <div class="mt-2 text-red-500">Content is required.</div>
+              }
+              <div
+                class="bg-white border-4 border-solid content border-y-black"
+              >
+                <div class="mt-2 min-h-[350px] shadow-md">
+                  <textarea
+                    class="w-full h-[350px] p-4 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter offer content in English..."
+                    formControlName="contentEn"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <label class="p-2">محتوى العرض (العربية)</label>
+              @if (offerForm.get('contentAr')?.errors?.['required'] &&
+              offerForm.get('contentAr')?.touched) {
+              <div class="mt-2 text-red-500">المحتوى مطلوب.</div>
+              }
+              <div
+                class="bg-white border-4 border-solid content border-y-black"
+              >
+                <div class="mt-2 min-h-[350px] shadow-md">
+                  <textarea
+                    class="w-full h-[350px] p-4 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="أدخل محتوى العرض بالعربية..."
+                    formControlName="contentAr"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Buttons -->
+      <div
+        class="flex flex-col gap-4 justify-center py-2 mt-16 text-center btns sm:flex-row"
+      >
+        <button
+          type="submit"
+          class="w-full sm:w-auto px-4 py-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          [disabled]="!isFormValid()"
+        >
+          Submit
+        </button>
+
+        <button
+          type="button"
+          class="px-4 py-2 w-full text-black bg-yellow-300 rounded sm:w-auto hover:bg-gray-600"
+          (click)="resetForm()"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

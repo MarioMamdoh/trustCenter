@@ -1,0 +1,102 @@
+<section class="px-4 py-16 contact-page">
+  <div class="container grid grid-cols-2 gap-8 items-start m-auto max-lg:grid-cols-1">
+    <section class="contact-panel">
+      <h2 class="contact-title">
+        {{ "CONTACT_US.TITLE" | translate }}
+      </h2>
+
+      <div class="space-y-5">
+        <div class="contact-info-row">
+          <span class="contact-info-label">
+            <i class="fa-solid fa-envelope"></i>
+            {{ "CONTACT_US.EMAIL.LABEL" | translate }}
+          </span>
+          <span class="contact-info-text">{{
+            "CONTACT_US.EMAIL.VALUE" | translate
+          }}</span>
+        </div>
+
+        <div class="contact-info-row">
+          <span class="contact-info-label">
+            <i class="fa-solid fa-phone"></i>
+            {{ "CONTACT_US.HOTLINE.LABEL" | translate }}
+          </span>
+          <span class="contact-info-text">{{
+            "CONTACT_US.HOTLINE.VALUE" | translate
+          }}</span>
+        </div>
+
+        <div class="contact-info-row">
+          <span class="contact-info-label whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            {{ "CONTACT_US.WHATSAPP.LABEL" | translate }}
+          </span>
+          <span class="contact-info-text">{{
+            "CONTACT_US.WHATSAPP.VALUE" | translate
+          }}</span>
+        </div>
+
+        <div class="contact-info-row">
+          <span class="contact-info-label">
+            <i class="fa-solid fa-location-dot"></i>
+            {{ "CONTACT_US.ADDRESS.LABEL" | translate }}
+          </span>
+          <div class="flex-1">
+            <p class="contact-info-text">
+              {{ "CONTACT_US.ADDRESS.SELECT" | translate }}
+            </p>
+            <div class="grid gap-3 mt-3 sm:grid-cols-2">
+              <button
+                type="button"
+                class="address-option"
+                [class.active]="selectedAddressIndex === 0"
+                (click)="selectAddress(0)"
+              >
+                <span>{{ "CONTACT_US.ADDRESS.BRANCH_1" | translate }}</span>
+                <small>{{ "CONTACT_US.ADDRESS.LINE1" | translate }}</small>
+              </button>
+              <button
+                type="button"
+                class="address-option"
+                [class.active]="selectedAddressIndex === 1"
+                (click)="selectAddress(1)"
+              >
+                <span>{{ "CONTACT_US.ADDRESS.BRANCH_2" | translate }}</span>
+                <small>{{ "CONTACT_US.ADDRESS.LINE2" | translate }}</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-panel">
+      <h2 class="contact-title">
+        {{ "CONTACT_US.LOCATION_TITLE" | translate }}
+      </h2>
+
+      <div class="overflow-hidden rounded-2xl shadow-xl map-frame">
+        <iframe
+          [src]="selectedMapUrl"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full"
+        ></iframe>
+      </div>
+
+      <a
+        [href]="selectedExternalMapUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex gap-2 items-center justify-center mt-5 open-map-link"
+      >
+        <i class="fa-solid fa-up-right-from-square"></i>
+        {{ "CONTACT_US.OPEN_MAP" | translate }}
+      </a>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,211 @@
+<section class="container flex justify-center items-center select-none ach">
+  <div>
+    <div
+      class="container grid grid-cols-2 gap-5 m-auto max-sm:grid-cols-1 max-sm:max-w-fit max-sm:gap-10"
+    >
+      <div
+        class="bg-[#202e3a] text-center text-white p-5 rounded-2xl transition-all duration-700 max-w-[450px]"
+      >
+        <i class="mb-2 text-3xl fa-solid fa-hands-holding-child"></i>
+        <h3 class="mb-2 text-xl font-bold">We Served</h3>
+        <div class="flex justify-evenly py-2">
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="decrementValue($event)"
+              >&minus;</span
+            >
+          </p>
+          <input
+            type="number"
+            [value]="servedValue"
+            aria-details="served"
+            class="w-16 bg-[#202e3a] text-white shadow-lg text-center border-2 border-white border-solid rounded-md"
+            [(ngModel)]="_sValue"
+            (input)="onInputChange($event)"
+            (focus)="onInputChange($event)"
+          />
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="incrementValue($event)"
+              >&plus;</span
+            >
+          </p>
+        </div>
+        <div class="Sub" aria-details="served" *ngIf="activeCard === 'served'">
+          <button
+            type="submit"
+            (click)="onSubmit($event)"
+            class="px-1 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            (click)="onClose($event)"
+            class="px-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          >
+            close
+          </button>
+        </div>
+        <p class="text-lg font-light">Client</p>
+      </div>
+      <div
+        class="bg-[#202e3a] text-center text-white p-5 rounded-2xl max-w-[450px]"
+      >
+        <i class="mb-2 text-3xl fa-solid fa-users"></i>
+        <h3 class="mb-2 text-xl font-bold">Our Team</h3>
+        <div class="flex justify-evenly py-2">
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="decrementValue($event)"
+              >&minus;</span
+            >
+          </p>
+
+          <input
+            type="number"
+            [value]="teamValue"
+            [(ngModel)]="_tValue"
+            aria-details="team"
+            class="w-16 bg-[#202e3a] text-white shadow-lg text-center border-2 border-white border-solid rounded-md"
+            (input)="onInputChange($event)"
+            (focus)="onInputChange($event)"
+          />
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="incrementValue($event)"
+              >&plus;</span
+            >
+          </p>
+        </div>
+        <div class="Sub" aria-details="team" *ngIf="activeCard === 'team'">
+          <button
+            type="submit"
+            (click)="onSubmit($event)"
+            class="px-1 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            (click)="onClose($event)"
+            class="px-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          >
+            close
+          </button>
+        </div>
+        <p class="text-lg font-light">Employees</p>
+      </div>
+      <div
+        class="bg-[#202e3a] text-center text-white p-5 rounded-2xl max-w-[450px]"
+      >
+        <i class="mb-2 text-3xl fa-solid fa-circle-check"></i>
+        <h3 class="mb-2 text-xl font-bold">Experience</h3>
+        <div class="flex justify-evenly py-2">
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="decrementValue($event)"
+              >&minus;</span
+            >
+          </p>
+
+          <input
+            type="number"
+            [value]="experienceValue"
+            [(ngModel)]="_eValue"
+            aria-details="experience"
+            class="w-16 bg-[#202e3a] text-white shadow-lg text-center border-2 border-white border-solid rounded-md"
+            (input)="onInputChange($event)"
+            (focus)="onInputChange($event)"
+          />
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="incrementValue($event)"
+              >&plus;</span
+            >
+          </p>
+        </div>
+        <div
+          class="Sub"
+          aria-details="experience"
+          *ngIf="activeCard === 'experience'"
+        >
+          <button
+            type="submit"
+            (click)="onSubmit($event)"
+            class="px-1 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            (click)="onClose($event)"
+            class="px-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          >
+            close
+          </button>
+        </div>
+        <p class="text-lg font-light">Years of experience</p>
+      </div>
+      <div
+        class="bg-[#202e3a] text-center text-white p-5 rounded-2xl max-w-[450px]"
+      >
+        <i class="mb-2 text-3xl fa-solid fa-truck-medical"></i>
+        <h3 class="mb-2 text-xl font-bold">Ambulance</h3>
+        <div class="flex justify-evenly py-2">
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="decrementValue($event)"
+              >&minus;</span
+            >
+          </p>
+
+          <input
+            type="number"
+            [value]="ambulanceValue"
+            [(ngModel)]="_aValue"
+            aria-details="ambulance"
+            class="w-16 bg-[#202e3a] text-white shadow-lg text-center border-2 border-white border-solid rounded-md"
+            (input)="onInputChange($event)"
+            (focus)="onInputChange($event)"
+          />
+          <p
+            class="flex justify-center items-center px-1 h-4 text-[#202e3a] bg-white cursor-pointer w-fit"
+          >
+            <span class="text-xl font-bold" (click)="incrementValue($event)"
+              >&plus;</span
+            >
+          </p>
+        </div>
+        <div
+          class="Sub"
+          aria-details="ambulance"
+          *ngIf="activeCard === 'ambulance'"
+        >
+          <button
+            type="submit"
+            (click)="onSubmit($event)"
+            class="px-1 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            (click)="onClose($event)"
+            class="px-2 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+          >
+            close
+          </button>
+        </div>
+        <p class="text-lg font-light">Equipped ambulance</p>
+      </div>
+    </div>
+  </div>
+</section>

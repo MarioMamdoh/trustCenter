@@ -1,0 +1,35 @@
+<section>
+  <app-section-heading [section]="'OUR_SERVICES' | translate"></app-section-heading>
+  <div
+    class="container grid grid-cols-3 gap-10 m-auto services-container max-[800px]:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center max-sm:p-5"
+  >
+    @for(service of serviceData; track service['_id']){
+    <div
+      class="service-item max-w-96 min-h-[390px] p-4 bg-white rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
+      <div
+        class="overflow-hidden relative rounded-2xl shadow-md aspect-[16/10] bg-slate-100"
+      >
+        <img
+          [src]="service['image']"
+          [alt]="service['title']"
+          class="object-cover w-full h-full transition-transform duration-500 ease-out hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#0070cd]/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100"
+        ></div>
+      </div>
+      <h3 class="mt-3 text-center text-[#0070cd] text-xl font-semibold">
+        {{ service["title"] }}
+      </h3>
+      <p class="mt-3 font-light">
+        {{ service["summary"] }}
+      </p>
+      <span
+        class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+        >More info</span
+      >
+    </div>
+    }
+  </div>
+</section>

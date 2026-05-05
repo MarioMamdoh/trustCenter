@@ -1,0 +1,11 @@
+<body #body>
+  @if (!isDashboardRoute) {
+    <app-header [body]="body"></app-header>
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  } @else {
+    <router-outlet></router-outlet>
+  }
+</body>

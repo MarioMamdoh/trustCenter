@@ -1,0 +1,169 @@
+{
+  "NEXT":"Next",
+  "PREVIOUS":"Previous",
+  "FREE_USEFUL_ARTICLES":"Free Useful Articles",
+  "TESTIMONIALS":"Testimonials",
+  "RESERVE": {
+    "SELECT_AREA": "Select The Area From Here",
+    "GIZA": "Giza",
+    "CAIRO": "Cairo",
+    "NO_BEDS": "Sorry all beds are busy, Try Again Later...",
+    "CONTACT_US": "Contact Us In Phone Number Or WhatsApp :",
+    "PHONE_NUMBERS": "01203643737 - 01559988321 ",
+    "LOCATION": "Location :",
+    "LOCATION_ADDRESS_GIZA": "El-Mohandeseen, Giza",
+    "LOCATION_ADDRESS_CAIRO_Masr_Elgedida": "=> Masr Elgedida",
+    "LOCATION_ADDRESS_CAIRO_Elmokattam": "=> Elmokattam"
+  },
+  "HEADER": {
+    "HOME": "Home",
+    "ABOUT_US": "About Us",
+    "SERVICES": "Services",
+    "CONTACT_US": "Contact Us",
+    "RESERVE": "Reserve",
+    "BLOGS": "Blogs",
+    "SLOGAN": "BEYOND MEDICINE .. TOWARDS WELLNESS",
+    "LOCATION": {
+      "TITLE": "4-6 Atbra, Madinet Al Eelam",
+      "SUBTITLE": "Agouza, Giza"
+    },
+    "OPENING_HOURS": {
+      "TITLE": "Opening Hours",
+      "SUBTITLE": "Sunday - Saturday : 24 hours"
+    },
+    "OFFERS": "Offers",
+    "CONTACT": {
+      "TITLE": "01203643737-01559988321",
+      "SUBTITLE": "Call us now!",
+      "PHONE_NUMBERS": "01203643737 - 01559988321",
+      "WHATSAPP_NUMBERS": "01016242488 - 01203643737"
+    }
+  },
+  "CONTACT_US": {
+    "TITLE": "Contact Us",
+    "LOCATION_TITLE": "Location",
+    "ADDRESS": {
+      "LABEL": "Address",
+      "LINE1": "4-6 Atbra, Madinet Al Eelam Agouza, Giza",
+      "LINE2": "Arafat, Al Waili Al Kabir Sharq, Hada'iq El Qobbah, Cairo Governorate 4382542",
+      "SELECT": "Choose an address",
+      "BRANCH_1": "Agouza Branch",
+      "BRANCH_2": "Hada'iq El Qobbah Branch"
+    },
+    "EMAIL": {
+      "LABEL": "Email",
+      "VALUE": "tursthealthcare@gmail.com"
+    },
+    "HOTLINE": {
+      "LABEL": "HotLine",
+      "VALUE": "01203643737-01559988321"
+    },
+    "WHATSAPP": {
+      "LABEL": "WhatsApp",
+      "VALUE": "01016242488 - 01203643737"
+    },
+    "OPEN_MAP": "Open in Google Maps"
+  },
+  "ACHIEVEMENT": {
+    "TITLE": "Achievement",
+    "SERVED": {
+      "TITLE": "We Served",
+      "COUNT": "Client"
+    },
+    "TEAM": {
+      "TITLE": "Our Team",
+      "COUNT": "Employees"
+    },
+    "EXPERIENCE": {
+      "TITLE": "Experience",
+      "COUNT": "Years of experience"
+    },
+    "AMBULANCE": {
+      "TITLE": "Ambulance",
+      "COUNT": "Equipped ambulance"
+    }
+  },
+  "SERVICES": {
+    "SPECIALTY": {
+      "TITLE": "Our Specialty",
+      "INTENSIVE_CARE": {
+        "TITLE": "Intensive care",
+        "BRAIN_NERVES": "brain and nerves",
+        "LIVER_DIGESTIVE": "liver and digestive system",
+        "HEART_CHEST": "heart and chest",
+        "GERIATRIC": "geriatric diseases",
+        "DIABETIC_COMA": "diabetic coma"
+      },
+      "OPERATING_ROOMS": "Operating rooms equipped to the highest level for all specialized surgeries",
+      "POST_OPERATIVE": "Post-operative follow-up",
+      "AMBULANCE": "Providing an equipped ambulance"
+    }
+  },
+  "OUR_SERVICES": "Our Services",
+  "WHY_US": "Why Us",
+  "NEWEST_BLOGS": "Newest Blogs",
+  "WHY_US_SERVICES": {
+    "EXPERIENCED_TEAM": {
+      "TITLE": "Experienced Team",
+      "DESCRIPTION": "Our team has years of specialized experience in providing professional and specialized nursing care services in various fields"
+    },
+    "SPECIAL_NEEDS": {
+      "TITLE": "Special Needs Patient Care",
+      "DESCRIPTION": "Our team understands that patients with special needs require special personal care"
+    },
+    "CERTIFIED_TEAM": {
+      "TITLE": "Certified Team",
+      "DESCRIPTION": "We have a multidisciplinary team of doctors, nurses and technicians qualified in specialties to provide professional nursing care at home"
+    },
+    "COMPREHENSIVE_ASSESSMENT": {
+      "TITLE": "Comprehensive Assessment",
+      "DESCRIPTION": "Our methods and care plans are carefully evaluated following the best medical practices and guidelines"
+    },
+    "CONTINUOUS_TRAINING": {
+      "TITLE": "Continuously Trained",
+      "DESCRIPTION": "Our service providers receive regular training to be prepared for all situations"
+    },
+    "VERIFIED_100": {
+      "TITLE": "100% Verified",
+      "DESCRIPTION": "We have a completely transparent system designed to be with the patient at every stage of the process"
+    }
+  },
+  "ABOUT_US": {
+    "TITLE": "About Us",
+    "INTRO": {
+      "TITLE": "We are a dedicated team of professionals on care.",
+      "MISSION": {
+        "TITLE": "Our Mission",
+        "DESCRIPTION": "Our mission is to provide exceptional care and support to our patients, ensuring they receive the best possible quality of life."
+      },
+      "VISION": {
+        "TITLE": "Our Vision",
+        "DESCRIPTION": "To be the leading healthcare provider in the region, offering the most comprehensive and affordable care possible. We strive to create a community where patients feel safe, heard, and valued."
+      }
+    },
+    "FEATURES": {
+      "AFFORDABLE_CARE": {
+        "TITLE": "Affordable Care",
+        "DESCRIPTION": "Affordable Care is a new way to think about care that allows Life to look at the full picture. To widen its scope, to acknowledge the full spectrum of factors that make up who you are and how you feel at any given time. So that, ultimately, we can help people live their lives in full the good, the bad and every moment in between, knowing that you are supported in every aspect of your world regardless of your potential."
+      },
+      "AMAZING_TEAM": {
+        "TITLE": "Amazing Team",
+        "DESCRIPTION": "In Life, we have a strong belief that groups of people working together can accomplish more than individuals on their own. Of course, the efficacy is wholly dependent on the quality and commitment of the players. Amazing Life's team players can lift the performance of the entire group."
+      },
+      "SPECIALTY": {
+        "TITLE": "Our specialty",
+        "INTENSIVE_CARE": {
+          "TITLE": "Intensive care",
+          "BRAIN_NERVES": "brain and nerves",
+          "LIVER_DIGESTIVE": "liver and digestive system",
+          "HEART_CHEST": "heart and chest",
+          "GERIATRIC": "geriatric diseases",
+          "DIABETIC_COMA": "diabetic coma"
+        },
+        "OPERATING_ROOMS": "Operating rooms equipped to the highest level for all specialized surgeries",
+        "POST_OPERATIVE": "Post-operative follow-up",
+        "AMBULANCE": "Providing an equipped ambulance"
+      }
+    }
+  }
+}

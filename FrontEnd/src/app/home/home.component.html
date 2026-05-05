@@ -1,0 +1,49 @@
+<section class="home">
+  <section class="services">
+    <app-services-sh></app-services-sh>
+  </section>
+  <section class="blogs">
+    <app-section-heading
+      [section]="'FREE_USEFUL_ARTICLES' | translate"
+    ></app-section-heading>
+    <div
+      class="blogs-container text-center bg-gradient-to-r from-[#15A085] from-10% to-[#085993] p-5 grid grid-cols-4 gap-5 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center"
+    >
+      @for(data of blogsData ; track data['_id']){
+
+      <div class="bg-white rounded-lg shadow-md blog-item-1 max-w-96">
+        <img [src]="data['image']" alt="Service 1" class="w-full h-[200px]" />
+        <div class="flex justify-between views-date">
+          <span class="ml-2 text-red-700">Views-{{ data["views"] }}</span>
+          <span class="mr-2 text-yellow-500">{{
+            data["createdAt"] | date : "mediumDate"
+          }}</span>
+        </div>
+        <div class="p-2 content">
+          <h3 class="text-xl font-semibold text-center text-[#231942]">
+            {{ data["title"] }}
+          </h3>
+          <p class="mt-3 font-light text-[#231942]">
+            {{ data["summary"] }}
+          </p>
+
+          <span
+            class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+            [routerLink]="['/blog', data['_id']]"
+            >Read Article</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+  <section>
+    <app-why-us></app-why-us>
+  </section>
+  <section>
+    <app-testimonials></app-testimonials>
+  </section>
+  <section>
+    <app-blog></app-blog>
+  </section>
+</section>

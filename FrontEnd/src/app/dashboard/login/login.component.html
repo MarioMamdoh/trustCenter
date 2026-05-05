@@ -1,0 +1,86 @@
+<div class="login-container">
+  <form class="login-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="logo-wrapper">
+      <img
+        src="assets/Gemini_Generated_Image_q4spyxq4spyxq4sp.png"
+        alt="Trust Medical & Ambulance Services"
+        class="login-logo"
+      />
+    </div>
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to your account</p>
+
+    <!-- Email Field -->
+    <div
+      class="custom-field"
+      [class.invalid]="email.invalid && (email.dirty || email.touched)"
+    >
+      <input
+        type="email"
+        name="email"
+        ngModel
+        required
+        email
+        #email="ngModel"
+        autocomplete="username"
+        class="custom-input"
+      />
+      <label>Email</label>
+      <span
+        class="error"
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+      >
+        <span *ngIf="email.errors?.['required']">Email is required.</span>
+        <span *ngIf="email.errors?.['email']">Enter a valid email.</span>
+      </span>
+    </div>
+
+    <!-- Password Field -->
+    <div
+      class="custom-field"
+      [class.invalid]="password.invalid && (password.dirty || password.touched)"
+    >
+      <input
+        [type]="hidePassword ? 'password' : 'text'"
+        name="password"
+        ngModel
+        required
+        minlength="6"
+        #password="ngModel"
+        autocomplete="current-password"
+        class="custom-input"
+      />
+      <label>Password</label>
+      <button
+        type="button"
+        class="toggle-password"
+        (click)="hidePassword = !hidePassword"
+        tabindex="-1"
+      >
+        <span class="material-icons">{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</span>
+      </button>
+      <span
+        class="error"
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+      >
+        <span *ngIf="password.errors?.['required']">Password is required.</span>
+        <span *ngIf="password.errors?.['minlength']"
+          >Password must be at least 6 characters.</span
+        >
+      </span>
+    </div>
+
+    <div class="actions-row">
+      <a class="forgot-link" href="#">Forgot password?</a>
+    </div>
+    <button
+      type="submit"
+      class="full-width login-btn"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+</div>

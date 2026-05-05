@@ -1,0 +1,38 @@
+<section>
+  <div class="shadow-2xl services-table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fullName" class="fullName">
+        <th mat-header-cell *matHeaderCellDef>Full Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.fullName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef>Age</th>
+        <td mat-cell *matCellDef="let element" class="max-w-[250px]">
+          {{ element.age }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="area">
+        <th mat-header-cell *matHeaderCellDef>Area</th>
+        <td mat-cell *matCellDef="let element">{{ element.area }}</td>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef>Phone</th>
+        <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+      </ng-container>
+      <ng-container matColumnDef="additional">
+        <th mat-header-cell *matHeaderCellDef>Additional</th>
+        <td mat-cell *matCellDef="let element">{{ element.additional }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>

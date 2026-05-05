@@ -1,0 +1,7 @@
+<app-sidebar #sidebar></app-sidebar>
+<div class="content-wrapper" [class.sidebar-open]="sidebar?.isSidebarOpen">
+  <app-header></app-header>
+  <div class="pages bg-[#eeed]">
+    <router-outlet></router-outlet>
+  </div>
+</div>

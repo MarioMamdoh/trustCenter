@@ -1,0 +1,82 @@
+section {
+  height: calc(100vh - 64px);
+  padding: 20px;
+  overflow-y: auto;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 10px;
+  }
+
+  form {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      padding: 15px;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1rem;
+        color: #202e3a;
+
+        @media screen and (max-width: 480px) {
+          font-size: 0.875rem;
+        }
+      }
+
+      input, select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        outline: none;
+        font-size: 1rem;
+
+        @media screen and (min-width: 768px) {
+          width: 60%;
+        }
+
+        &:focus {
+          border-color: var(--project-primary-color);
+          box-shadow: 0 0 0 2px rgba(56, 206, 60, 0.1);
+        }
+      }
+
+      select {
+        @media screen and (min-width: 768px) {
+          width: 40%;
+        }
+      }
+    }
+
+    .btns {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      button {
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        @media screen and (max-width: 480px) {
+          width: 100%;
+          padding: 12px;
+        }
+      }
+    }
+  }
+}

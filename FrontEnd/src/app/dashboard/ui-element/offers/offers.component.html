@@ -1,0 +1,64 @@
+<section class="container p-2 mx-auto">
+  <div class="my-10 text-center add-offer">
+    <button
+      class="bg-[var(--project-secondary-color)] text-white p-3 rounded-md hover:bg-[var(--project-text-color)] transition-all w-full sm:w-auto"
+      [routerLink]="['/dashboard/ui-elements/offers/new-offer']"
+      (click)="onAdding()"
+    >
+      <i class="mr-2 text-lg fa-solid fa-plus"></i>
+      Add New Offer
+    </button>
+  </div>
+  <div class="overflow-x-auto shadow-2xl">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 w-full min-w-[800px]"
+    >
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="name" class="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="content">
+        <th mat-header-cell *matHeaderCellDef>Content</th>
+        <td mat-cell *matCellDef="let element" class="max-w-[250px]">
+          {{ element.content }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="precentage">
+        <th mat-header-cell *matHeaderCellDef>Precentage</th>
+        <td mat-cell *matCellDef="let element">{{ element.precentage }}%</td>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>Edit</th>
+        <td mat-cell *matCellDef="let element">
+          <div>
+            <button
+              class="px-4 py-2 mr-3 font-bold text-white bg-yellow-400 rounded-lg shadow-md transition-all duration-300 hover:bg-yellow-500"
+              (click)="onEdit()"
+              [queryParams]="{ id: getElementById(element) }"
+              routerLink="/dashboard/ui-elements/offers/new-offer"
+            >
+              Edit
+            </button>
+            <button
+              class="px-4 py-2 font-bold text-white bg-red-400 rounded-lg shadow-md transition-all duration-300 hover:bg-red-500"
+              (click)="deleteOffer(element)"
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</section>

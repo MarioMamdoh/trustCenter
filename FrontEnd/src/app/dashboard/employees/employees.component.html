@@ -1,0 +1,56 @@
+<section class="container flex justify-center items-center p-4">
+  <div class="grid grid-cols-1 gap-4 w-full max-w-4xl sm:grid-cols-2 sm:gap-10">
+    <!-- All Employees Card -->
+    <div
+      class="bg-[#085993] p-5 text-center text-white rounded-md shadow-md cursor-pointer hover:bg-[#064875] transition-all duration-500 min-h-[8rem]"
+      routerLink="./all-employees"
+    >
+      <div class="flex justify-center items-center h-full">
+        <div class="flex gap-3 items-center">
+          <i class="text-2xl fas fa-users"></i>
+          <p class="text-xl font-medium sm:text-2xl">All Employees</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Show Employee By Area Card -->
+    <div
+      routerLink="/dashboard/employees/area-employees"
+      class="bg-[#085993] p-5 text-center text-white rounded-md shadow-md cursor-pointer hover:bg-[#064875] transition-all duration-500 min-h-[8rem]"
+    >
+      <div class="flex justify-center items-center h-full">
+        <div class="flex gap-3 items-center">
+          <i class="text-2xl fas fa-map-marker-alt"></i>
+          <p class="text-xl font-medium sm:text-2xl">Show Employee By Area</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Employee Card -->
+    <div
+      (click)="onAdd()"
+      routerLink="/dashboard/employees/new-employee"
+      class="bg-[#085993] p-5 text-center text-white rounded-md shadow-md cursor-pointer hover:bg-[#064875] transition-all duration-500 min-h-[8rem]"
+    >
+      <div class="flex justify-center items-center h-full">
+        <div class="flex gap-3 items-center">
+          <i class="text-2xl fas fa-user-plus"></i>
+          <p class="text-xl font-medium sm:text-2xl">New Employee</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Employees Card -->
+    <div
+      routerLink="/dashboard/employees/edit-employees"
+      class="bg-[#085993] p-5 text-center text-white rounded-md shadow-md cursor-pointer hover:bg-[#064875] transition-all duration-500 min-h-[8rem]"
+    >
+      <div class="flex justify-center items-center h-full">
+        <div class="flex gap-3 items-center">
+          <i class="text-2xl fas fa-edit"></i>
+          <p class="text-xl font-medium sm:text-2xl">Edit Employees</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

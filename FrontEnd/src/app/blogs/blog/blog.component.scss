@@ -1,0 +1,86 @@
+.newest-blogs-container {
+  .list-1 {
+    left: 5%;
+    @media (max-width: 1278px) {
+      left: 3%;
+    }
+    @media (max-width: 767px) {
+      left: 1%;
+    }
+    @media (max-width: 640px) {
+      left: 4%;
+    }
+    @media (max-width: 500px) {
+      left: 2%;
+    }
+    @media (max-width: 400px) {
+      left: 1%;
+    }
+  }
+  .list-2 {
+    @media (max-width: 1278px) {
+      left: 18%;
+    }
+    @media (max-width: 1023px) {
+      left: 23%;
+    }
+    @media (max-width: 767px) {
+      left: 21%;
+    }
+    @media (max-width: 640px) {
+      left: 29%;
+    }
+    @media (max-width: 520px) {
+      left: 27%;
+    }
+    @media (max-width: 400px) {
+      left: 26%;
+    }
+    left: 20%;
+  }
+  .list-3 {
+    @media (max-width: 1278px) {
+      left: 32%;
+    }
+    @media (max-width: 1023px) {
+      left: 43%;
+    }
+    @media (max-width: 767px) {
+      left: 41%;
+    }
+    @media (max-width: 640px) {
+      left: 54%;
+    }
+    @media (max-width: 500px) {
+      left: 52%;
+    }
+    @media (max-width: 400px) {
+      left: 51%;
+    }
+    left: 35%;
+  }
+  .list-4 {
+    left: 50%;
+    @media (max-width: 1272px) {
+      left: 47%;
+    }
+    @media (max-width: 1023px) {
+      left: 63%;
+    }
+    @media (max-width: 767px) {
+      left: 61%;
+    }
+    @media (max-width: 640px) {
+      left: 79%;
+    }
+    @media (max-width: 500px) {
+      left: 78%;
+    }
+    @media (max-width: 400px) {
+      left: 76%;
+    }
+  }
+  .list {
+    transform: translate(0%);
+  }
+}

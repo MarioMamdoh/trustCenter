@@ -1,0 +1,74 @@
+<header
+  class="flex justify-between items-center bg-white shadow-md max-md:mt-10"
+>
+  <section class="flex items-center gap-4 welcome-section">
+    <div class="cursor-pointer admin-brand">
+      <img
+        src="assets/Gemini_Generated_Image_q4spyxq4spyxq4sp.png"
+        alt="Trust Medical & Ambulance Services"
+        class="object-contain h-auto admin-brand-logo"
+      />
+    </div>
+    <div>
+      <p class="ml-2">
+        Welcome back,
+        <span class="text-[var(--project-text-color)]">{{ userName }}</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="flex items-center header-right">
+    <div class="mr-2 user sm:mr-4">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <img src="assets/th.jpeg" alt="" class="w-8 h-8 rounded-full" />
+      </button>
+      <mat-menu #menu="matMenu" class="p-2 w-60 shadow-lg">
+        <div class="px-4">
+          <div class="m-auto mb-5 text-center">
+            <img
+              src="assets/th.jpeg"
+              alt=""
+              class="m-auto w-16 h-16 rounded-full sm:w-20 sm:h-20"
+            />
+            <p class="mt-2 font-light capitalize">{{ userName }}</p>
+            <p class="mt-2 text-sm font-extralight">
+              {{ userEmail }}
+            </p>
+          </div>
+          <button mat-menu-item class="hover:bg-gray-100">
+            <div class="flex items-center">
+              <i
+                class="mr-4 fa-regular fa-user text-[var(--project-text-color)] text-lg"
+              ></i>
+              <p class="font-normal">My Profile</p>
+            </div>
+          </button>
+          <button mat-menu-item class="hover:bg-gray-100">
+            <div class="flex items-center">
+              <i
+                class="fa-regular fa-message text-[var(--project-text-color)] text-lg mr-4"
+              ></i>
+              <p class="font-normal">Message</p>
+            </div>
+          </button>
+          <button mat-menu-item class="hover:bg-gray-100">
+            <div class="flex items-center">
+              <i
+                class="fa-solid fa-bolt text-[var(--project-text-color)] text-lg mr-4"
+              ></i>
+              <p class="font-normal">Activity</p>
+            </div>
+          </button>
+          <button mat-menu-item class="hover:bg-gray-100" (click)="signOut()">
+            <div class="flex items-center">
+              <i
+                class="fa-solid fa-power-off text-[var(--project-text-color)] text-lg mr-4"
+              ></i>
+              <p class="font-normal">Sign Out</p>
+            </div>
+          </button>
+        </div>
+      </mat-menu>
+    </div>
+  </section>
+</header>

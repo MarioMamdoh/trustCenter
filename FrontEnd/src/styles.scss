@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ngx-toastr/toastr";
+@import "@angular/material/prebuilt-themes/azure-blue.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+body {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+:root {
+  --project-primary-color: #085993;
+  --project-secondary-color: #085993;
+  --project-text-color: #064875;
+}
+
+[class*="hover:bg-[#085993]"],
+[class*="bg-[#085993]"],
+[class*="hover:text-[#085993]"] {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+[class*="hover:bg-[#085993]"]:hover,
+[class*="bg-[#085993]"]:hover {
+  box-shadow: 0 8px 18px rgba(8, 89, 147, 0.22);
+  transform: translateY(-2px);
+}
+
+[class*="hover:text-[#085993]"]:hover,
+[class*="text-[#085993]"] {
+  text-shadow: 0 3px 10px rgba(8, 89, 147, 0.16);
+}
+
+/* Custom toastr position for middle-right */
+.toast-center-right {
+  position: fixed !important;
+  top: 50% !important;
+  right: 20px !important;
+  transform: translateY(-50%) !important;
+  z-index: 9999 !important;
+}
+
+.toast-center-right .toast {
+  margin-bottom: 10px !important;
+}

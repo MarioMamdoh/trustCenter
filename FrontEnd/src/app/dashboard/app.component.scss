@@ -1,0 +1,29 @@
+.pages {
+  padding-top: 64px;
+}
+
+.content-wrapper {
+  margin-left: 224px;
+  transition: all 0.3s ease;
+  // min-height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .pages {
+    padding-top: 64px;
+
+    @media screen and (max-width: 480px) {
+      padding: 0.5rem;
+      padding-top: 64px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-wrapper.sidebar-open {
+    overflow: hidden;
+  }
+}

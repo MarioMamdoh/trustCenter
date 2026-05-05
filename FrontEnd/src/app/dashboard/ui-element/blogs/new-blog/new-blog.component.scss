@@ -1,0 +1,53 @@
+section {
+  @apply min-h-[calc(100vh-64px)] p-4 overflow-y-auto;
+
+  @media (max-width: 768px) {
+    @apply p-2;
+  }
+
+  .form {
+    .forms-control {
+      @media (max-width: 1024px) {
+        @apply flex-col gap-4;
+      }
+
+      .col-1, .col-2 {
+        @media (max-width: 768px) {
+          @apply p-2;
+        }
+      }
+    }
+
+    .form-control {
+      label {
+        @media (max-width: 768px) {
+          @apply text-sm mb-1;
+        }
+      }
+
+      input, textarea {
+        @media (max-width: 768px) {
+          @apply text-sm;
+        }
+      }
+    }
+
+    .content {
+      .editor {
+        @media (max-width: 768px) {
+          @apply min-h-[200px];
+        }
+      }
+    }
+
+    .btns {
+      @media (max-width: 640px) {
+        @apply flex-col gap-2;
+
+        button {
+          @apply w-full;
+        }
+      }
+    }
+  }
+}

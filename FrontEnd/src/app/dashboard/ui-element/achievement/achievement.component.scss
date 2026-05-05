@@ -1,0 +1,88 @@
+.ach {
+  height: calc(100vh - 64px);
+  padding: 20px;
+  overflow-y: auto;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 10px;
+  }
+
+  .container {
+    @media screen and (max-width: 768px) {
+      padding: 0.5rem;
+    }
+
+    .grid {
+      @media screen and (max-width: 640px) {
+        gap: 1.5rem;
+      }
+
+      div[class*="bg-[#202e3a]"] {
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          max-width: none;
+          padding: 1.5rem;
+        }
+
+        i {
+          @media screen and (max-width: 480px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        h3 {
+          @media screen and (max-width: 480px) {
+            font-size: 1.125rem;
+          }
+        }
+
+        .flex.justify-evenly {
+          @media screen and (max-width: 480px) {
+            gap: 0.5rem;
+          }
+
+          input[type="number"] {
+            @media screen and (max-width: 480px) {
+              width: 3.5rem;
+              font-size: 0.875rem;
+            }
+          }
+
+          p {
+            @media screen and (max-width: 480px) {
+              height: 1.25rem;
+
+              span {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+
+        .Sub {
+          @media screen and (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+
+            button {
+              width: 100%;
+              margin: 0;
+              padding: 0.5rem;
+            }
+          }
+        }
+
+        p.text-lg {
+          @media screen and (max-width: 480px) {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

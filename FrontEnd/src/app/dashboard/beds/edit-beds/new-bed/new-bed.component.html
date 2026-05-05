@@ -1,0 +1,68 @@
+<section>
+  <div
+    class="add-bed bg-[var(--project-secondary-color)] w-[300px] text-center m-auto my-5 text-white p-3 rounded-md shadow"
+  >
+    <p class="text-3xl font-semibold animate-pulse">{{ formStatus }} Bed</p>
+  </div>
+  <form [formGroup]="bedForm" (ngSubmit)="onSubmit()">
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Bed Number</label>
+      <input
+        type="text"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="BedNumber"
+        formControlName="bedNumber"
+      />
+      <div
+        *ngIf="
+          bedForm.get('bedNumber')?.touched && bedForm.get('bedNumber')?.errors
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        <span *ngIf="bedForm.get('bedNumber')?.errors?.['required']">
+          Bed number is required
+        </span>
+        <span *ngIf="bedForm.get('bedNumber')?.errors?.['bedExistsInArea']">
+          This bed number already exists in the selected area
+        </span>
+      </div>
+    </div>
+
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Area</label>
+      <select
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        formControlName="area"
+      >
+        <option value="">Select an area</option>
+        <option *ngFor="let area of areas" [value]="area.area">
+          {{ area.area }}
+        </option>
+      </select>
+      <div
+        *ngIf="bedForm.get('area')?.touched && bedForm.get('area')?.invalid"
+        class="mt-1 text-sm text-red-500"
+      >
+        Please select an area
+      </div>
+    </div>
+    <div class="py-2 mt-16 btns">
+      <!-- Buttons -->
+      <button
+        type="submit"
+        class="px-8 py-4 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+        [disabled]="bedForm.invalid"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="px-8 py-4 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+        (click)="resetForm()"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</section>

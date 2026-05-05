@@ -1,0 +1,107 @@
+// Footer logo styling
+.logo-footer {
+  transition: all 0.3s ease;
+  padding: 0.25rem;
+
+  &:hover {
+    transform: scale(1.05);
+
+    h1 {
+      text-shadow: 0 0 8px rgba(22, 122, 112, 0.3);
+    }
+  }
+
+  h1 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 800;
+    color: #085993;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px rgba(22, 122, 112, 0.1);
+    transition: all 0.3s ease;
+    margin: 0;
+  }
+
+  p {
+    font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+    color: #d1d5db;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-top: 0.125rem;
+    transition: all 0.3s ease;
+    margin: 0;
+    line-height: 1.2;
+  }
+}
+
+// Footer logo animation
+@keyframes footerLogoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-footer {
+  animation: footerLogoFadeIn 0.6s ease-out forwards;
+}
+
+// Responsive breakpoints for footer logo
+@media (max-width: 320px) {
+  .logo-footer {
+    h1 {
+      font-size: 0.875rem;
+    }
+    p {
+      font-size: 0.375rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-footer {
+    h1 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-footer {
+    h1 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 0.625rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo-footer {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .logo-footer {
+    h1 {
+      font-size: 1.75rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
+}

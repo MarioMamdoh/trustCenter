@@ -1,0 +1,27 @@
+section {
+  @apply min-h-[calc(100vh-64px)] p-4 overflow-x-auto;
+
+  @media (max-width: 768px) {
+    @apply p-2;
+  }
+
+  .add-offer {
+    @media (max-width: 768px) {
+      @apply my-4;
+    }
+  }
+
+  table {
+    td {
+      @media (max-width: 768px) {
+        @apply text-sm p-2;
+      }
+
+      button {
+        @media (max-width: 640px) {
+          @apply text-xs px-2 py-1 w-full mb-1;
+        }
+      }
+    }
+  }
+}

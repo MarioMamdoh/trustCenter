@@ -1,0 +1,75 @@
+<section class="container p-5 bg-white">
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Full Name</label>
+      <input
+        type="text"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="FullName"
+        formControlName="fullName"
+      />
+    </div>
+
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Age</label>
+      <input
+        type="text"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="age"
+        formControlName="age"
+      />
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Phone Number</label>
+      <input
+        type="phone"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="phone number"
+        formControlName="phone"
+      />
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Area</label>
+      <select
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        formControlName="area"
+      >
+        <option value="">Select an area</option>
+        <option *ngFor="let area of areas" [value]="area.area">
+          {{ area.area }}
+        </option>
+      </select>
+      <div
+        *ngIf="customerForm.get('area')?.touched && customerForm.get('area')?.invalid"
+        class="mt-1 text-sm text-red-500"
+      >
+        Please select an area
+      </div>
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Additional</label>
+      <textarea
+        placeholder="additional"
+        formControlName="additional"
+        class="block p-2 mt-1 w-3/5 h-32 shadow-lg outline-none text-[#202e3a]"
+      ></textarea>
+    </div>
+    <div class="py-2 mt-16 btns">
+      <!-- Buttons -->
+      <button
+        type="submit"
+        class="px-8 py-4 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+        [disabled]="customerForm.invalid"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="px-8 py-4 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</section>

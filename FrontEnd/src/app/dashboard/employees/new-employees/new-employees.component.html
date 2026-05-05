@@ -1,0 +1,138 @@
+<section class="container p-5 bg-white">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Full Name</label>
+      <input
+        type="text"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="FullName"
+        formControlName="fullName"
+      />
+    </div>
+
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Age</label>
+      <input
+        type="text"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="age"
+        formControlName="age"
+      />
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Salary</label>
+      <input
+        type="number"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="salary"
+        formControlName="salary"
+      />
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Area</label>
+      <select
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        formControlName="area"
+      >
+        <option value="">Select an area</option>
+        <option *ngFor="let area of areas" [value]="area.area">
+          {{ area.area }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          employeeForm.get('area')?.touched && employeeForm.get('area')?.invalid
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Please select an area
+      </div>
+    </div>
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Department</label>
+      <select
+        class="block p-2 mt-1 w-1/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        formControlName="department"
+      >
+        @for(department of departments ; track department){
+        <option value="{{ department }}">{{ department }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Email</label>
+      <input
+        type="email"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="Email"
+        formControlName="email"
+      />
+      <div
+        *ngIf="
+          employeeForm.get('email')?.touched &&
+          employeeForm.get('email')?.invalid
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Please enter a valid email address
+      </div>
+    </div>
+
+    <div class="mb-7 form-control" *ngIf="employeeForm.contains('password')">
+      <label class="text-xl text-[#202e3a] ml-1">Password</label>
+      <input
+        type="password"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div
+        *ngIf="
+          employeeForm.get('password')?.touched &&
+          employeeForm.get('password')?.invalid
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Password must be at least 6 characters long
+      </div>
+    </div>
+
+    <div class="mb-7 form-control">
+      <label class="text-xl text-[#202e3a] ml-1">Deduction</label>
+      <input
+        type="number"
+        class="block p-2 mt-1 w-3/5 h-9 shadow-lg outline-none text-[#202e3a]"
+        placeholder="Deduction"
+        formControlName="deduction"
+      />
+      <div
+        *ngIf="
+          employeeForm.get('deduction')?.touched &&
+          employeeForm.get('deduction')?.invalid
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Please enter a deduction amount
+      </div>
+    </div>
+
+    <div class="py-2 mt-16 btns">
+      <!-- Buttons -->
+      <button
+        type="submit"
+        class="px-8 py-4 mr-2 text-white bg-[--project-primary-color] rounded hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+        [disabled]="employeeForm.invalid"
+      >
+        Submit
+      </button>
+
+      <button
+        type="button"
+        class="px-8 py-4 ml-4 text-black bg-yellow-300 rounded hover:bg-gray-600"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</section>

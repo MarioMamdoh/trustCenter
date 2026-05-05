@@ -1,0 +1,141 @@
+<app-section-heading
+  [section]="'NEWEST_BLOGS' | translate"
+></app-section-heading>
+<div class="container overflow-hidden m-auto w-full newest-blogs-container">
+  <div class="flex list w-[5000px] relative transition-all" #blogList>
+    <div
+      class="grid relative grid-cols-3 gap-5 order-0 list-1 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center"
+      (mouseenter)="stopToggleBlogList()"
+      (mouseleave)="returnToggleBlogList()"
+    >
+      @for(data of blogsFirstData ; track data['_id']){
+      <div
+        class="mb-3 bg-white rounded-lg shadow-md blog-item-1 max-w-60 h-[400px]"
+      >
+        <div>
+          <img [src]="data['image']" alt="Service 1" class="w-full h-[150px]" />
+          <div class="flex justify-between views-date">
+            <span class="ml-2 text-red-700">Views-{{ data["views"] }}</span>
+            <span class="mr-2 text-yellow-500">{{
+              data["createdAt"] | date : "mediumDate"
+            }}</span>
+          </div>
+        </div>
+        <div class="p-2 content">
+          <h3 class="text-xl font-semibold text-center text-[#231942]">
+            {{ data["title"] }}
+          </h3>
+          <p class="mt-3 font-light text-[#231942]">
+            {{ data["summary"] }}
+          </p>
+
+          <span
+            class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+            [routerLink]="['/blog', data['_id']]"
+            >Read Article</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+    <div
+      class="grid relative order-1 grid-cols-3 gap-5 list-2 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center"
+      (mouseenter)="stopToggleBlogList()"
+      (mouseleave)="returnToggleBlogList()"
+    >
+      @for(data of blogsSecondData ; track data['_id']){
+      <div
+        class="mb-3 bg-white rounded-lg shadow-md blog-item-1 max-w-60 h-[400px]"
+      >
+        <img [src]="data['image']" alt="Service 1" class="w-full h-[150px]" />
+        <div class="flex justify-between views-date">
+          <span class="ml-2 text-red-700">Views-{{ data["views"] }}</span>
+          <span class="mr-2 text-yellow-500">{{
+            data["createdAt"] | date : "mediumDate"
+          }}</span>
+        </div>
+        <div class="p-2 content">
+          <h3 class="text-xl font-semibold text-center text-[#231942]">
+            {{ data["title"] }}
+          </h3>
+          <p class="mt-3 font-light text-[#231942]">
+            {{ data["summary"] }}
+          </p>
+
+          <span
+            class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+            [routerLink]="['/blog', data['_id']]"
+            >Read Article</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+    <div
+      class="grid relative order-2 grid-cols-3 gap-5 list-3 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center"
+      (mouseenter)="stopToggleBlogList()"
+      (mouseleave)="returnToggleBlogList()"
+    >
+      @for(data of blogsThirdData ; track data['_id']){
+      <div
+        class="mb-3 bg-white rounded-lg shadow-md blog-item-1 max-w-60 h-[400px]"
+      >
+        <img [src]="data['image']" alt="Service 1" class="w-full h-[150px]" />
+        <div class="flex justify-between views-date">
+          <span class="ml-2 text-red-700">Views-{{ data["views"] }}</span>
+          <span class="mr-2 text-yellow-500">{{
+            data["createdAt"] | date : "mediumDate"
+          }}</span>
+        </div>
+        <div class="p-2 content">
+          <h3 class="text-xl font-semibold text-center text-[#231942]">
+            {{ data["title"] }}
+          </h3>
+          <p class="mt-3 font-light text-[#231942]">
+            {{ data["summary"] }}
+          </p>
+
+          <span
+            class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+            [routerLink]="['/blog', data['_id']]"
+            >Read Article</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+    <div
+      class="grid relative order-3 grid-cols-3 gap-5 list-4 max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:place-items-center"
+      (mouseenter)="stopToggleBlogList()"
+      (mouseleave)="returnToggleBlogList()"
+    >
+      @for(data of blogsFourthData ; track data['_id']){
+      <div
+        class="mb-3 bg-white rounded-lg shadow-md blog-item-1 max-w-60 h-[400px]"
+      >
+        <img [src]="data['image']" alt="Service 1" class="w-full h-[150px]" />
+        <div class="flex justify-between views-date">
+          <span class="ml-2 text-red-700">Views-{{ data["views"] }}</span>
+          <span class="mr-2 text-yellow-500">{{
+            data["createdAt"] | date : "mediumDate"
+          }}</span>
+        </div>
+        <div class="p-2 content">
+          <h3 class="text-xl font-semibold text-center text-[#231942]">
+            {{ data["title"] }}
+          </h3>
+          <p class="mt-3 font-light text-[#231942]">
+            {{ data["summary"] }}
+          </p>
+
+          <span
+            class="block mt-2 text-center bg-transparent py-1 text-black rounded-lg border-[#0070cd] border-2 border-solid cursor-pointer hover:bg-[#0070cd] hover:text-white transition-all w-1/2 m-auto"
+            [routerLink]="['/blog', data['_id']]"
+            >Read Article</span
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

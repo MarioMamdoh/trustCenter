@@ -1,0 +1,246 @@
+<button
+  class="fixed top-4 z-50 p-2 text-white bg-black shadow-lg menu-toggle max-2xl:hidden max-md:block w-fit"
+  [class.left-4]="!isSidebarOpen"
+  [class.left-60]="isSidebarOpen"
+  (click)="toggleSidebar()"
+>
+  <i
+    class="fa-solid"
+    [class.fa-times]="isSidebarOpen"
+    [class.fa-bars]="!isSidebarOpen"
+  ></i>
+</button>
+
+<div
+  class="sidebar-overlay"
+  [class.show]="isSidebarOpen"
+  (click)="toggleSidebar()"
+></div>
+
+<nav
+  class="overflow-y-auto fixed w-56 h-screen max-h-screen text-white bg-black shadow-lg transition-all sidebar"
+  [class.show]="isSidebarOpen"
+>
+  <ul class="flex flex-col pb-20">
+    <!-- Logo Mini -->
+    <li class="px-4 py-3">
+      <a class="block" href="index.html">
+        <img
+          src="assets/Gemini_Generated_Image_q4spyxq4spyxq4sp.png"
+          alt="Trust Medical & Ambulance Services"
+          class="object-contain w-36 h-auto"
+        />
+      </a>
+    </li>
+
+    <!-- Profile Section -->
+    <li class="px-4 py-3">
+      <a href="#" class="flex items-center space-x-4">
+        <div class="relative">
+          <img
+            class="w-8 h-8 rounded-full"
+            src="assets/th.jpeg"
+            alt="profile image"
+          />
+          <div
+            class="absolute right-0 bottom-0 w-2 h-2 bg-green-500 rounded-full"
+          ></div>
+        </div>
+        <div class="flex-grow">
+          <p class="text-sm capitalize">{{ userName }}</p>
+          <p class="text-xs capitalize">{{ userRole }}</p>
+        </div>
+        <div class="relative">
+          <i class="icon-bubbles"></i>
+          <div
+            class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"
+          ></div>
+        </div>
+      </a>
+    </li>
+
+    <!-- Icons Section -->
+    <li class="px-2">
+      <a
+        class="flex items-center justify-between px-4 py-2 hover:bg-gray-50 hover:text-[#38ce3c] hover:font-bold rounded-lg transition-all"
+        data-bs-toggle="collapse"
+      >
+        <div class="flex items-center">
+          <i class="mr-3 icon-globe"></i>
+          <span>Employees</span>
+        </div>
+        <i class="text-xs icon-arrow-down"></i>
+      </a>
+      <div>
+        <ul class="py-2 pl-8 space-y-1">
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['employees']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Employees</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="px-2">
+      <a
+        class="flex items-center justify-between px-4 py-2 hover:bg-gray-50 hover:text-[#38ce3c] hover:font-bold rounded-lg transition-all"
+        data-bs-toggle="collapse"
+      >
+        <div class="flex items-center">
+          <i class="mr-3 icon-book-open"></i>
+          <span>Customers</span>
+        </div>
+        <i class="text-xs icon-arrow-down"></i>
+      </a>
+      <div>
+        <ul class="py-2 pl-8 space-y-1">
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['customers']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Customers</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="px-2">
+      <a
+        class="flex items-center justify-between px-4 py-2 hover:bg-gray-50 hover:text-[#38ce3c] hover:font-bold rounded-lg transition-all"
+        data-bs-toggle="collapse"
+      >
+        <div class="flex items-center">
+          <i class="mr-3 icon-chart"></i>
+          <span>Beds</span>
+        </div>
+        <i class="text-xs icon-arrow-down"></i>
+      </a>
+      <div>
+        <ul class="py-2 pl-8 space-y-1">
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['beds']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Beds</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['edit-beds']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Edit Beds</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['beds-details']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Beds Details</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!-- UI Elements Section -->
+    <li class="px-2">
+      <a
+        class="flex items-center justify-between px-4 py-2 hover:bg-gray-50 hover:text-[#38ce3c] hover:font-bold rounded-lg transition-all"
+        data-bs-toggle="collapse"
+      >
+        <div class="flex items-center">
+          <i class="mr-3 icon-layers"></i>
+          <span>UI Elements</span>
+        </div>
+        <i class="text-xs icon-arrow-down"></i>
+      </a>
+      <div>
+        <ul class="py-2 pl-8 space-y-1">
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['ui-elements/services']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['ui-elements/blogs']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Blogs</a
+            >
+          </li>
+
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['ui-elements/achievement']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Achievement</a
+            >
+          </li>
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['ui-elements/offers']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Offers</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="px-2">
+      <a
+        class="flex items-center justify-between px-4 py-2 hover:bg-gray-50 hover:text-[#38ce3c] hover:font-bold rounded-lg transition-all"
+        data-bs-toggle="collapse"
+      >
+        <div class="flex items-center">
+          <i class="mr-3 icon-layers"></i>
+          <span>Additional</span>
+        </div>
+        <i class="text-xs icon-arrow-down"></i>
+      </a>
+      <div>
+        <ul class="py-2 pl-8 space-y-1">
+          <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['roles']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Roles</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              class="block px-4 py-2 text-sm hover:text-[#085993]"
+              [routerLink]="['area']"
+              routerLinkActive="active"
+              (click)="closeSidebarOnMobile()"
+              >Area</a
+            >
+          </li> -->
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

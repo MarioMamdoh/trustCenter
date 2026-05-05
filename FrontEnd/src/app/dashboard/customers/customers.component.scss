@@ -1,0 +1,40 @@
+section {
+  height: calc(100vh - 64px);
+  padding: 20px;
+  overflow-y: auto;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    min-height: calc(100vh - 64px);
+    padding: 10px;
+  }
+
+  .grid {
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .card {
+    min-height: 8rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 1rem;
+
+      i {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
