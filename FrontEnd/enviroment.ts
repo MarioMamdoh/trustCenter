@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  MainAPI: 'http://localhost:3000/api',
+  MainAPI: 'https://trustcenter-99vpnkfy.b4a.run/api',
 };
