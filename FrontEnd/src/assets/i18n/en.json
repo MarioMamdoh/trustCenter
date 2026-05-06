@@ -165,5 +165,31 @@
         "AMBULANCE": "Providing an equipped ambulance"
       }
     }
+  },
+  "TEMP_SERVICES":{
+    "AMBULANCE":{
+      "TITLE":"Ambulance Services",
+      "SUMMARY":"Rapid-response ambulances equipped with essential medical tools, ensuring safe and timely transport in critical situations."
+    },
+    "MEDICAL_CONSULTATION":{
+      "TITLE":"Medical Consultations",
+      "SUMMARY":"Professional consultations provided by an experienced medical team specialized in emergency care and urgent cases."
+    },
+    "INTENSIVE_CARE":{
+      "TITLE":"Intensive Care",
+      "SUMMARY":"Advanced intensive care services with continuous monitoring and specialized support for critical patients."
+    },
+    "HOME_NURSING":{
+      "TITLE":"Home Nursing",
+      "SUMMARY":"Qualified nursing care delivered at home, offering comfort, follow-up, and medical support for patients outside the clinic."
+    },
+    "PHYSICAL_THERAPY":{
+      "TITLE":"Physical Therapy",
+      "SUMMARY":"Targeted rehabilitation programs to improve mobility, reduce pain, and support recovery after injury or illness."
+    },
+    "EMERGENCY_CARE":{
+      "TITLE":"Emergency Care",
+      "SUMMARY":"Immediate medical attention for urgent and life-threatening conditions, available to handle critical situations efficiently."
+    }
   }
 }
