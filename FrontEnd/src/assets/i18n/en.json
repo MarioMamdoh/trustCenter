@@ -190,6 +190,18 @@
     "EMERGENCY_CARE":{
       "TITLE":"Emergency Care",
       "SUMMARY":"Immediate medical attention for urgent and life-threatening conditions, available to handle critical situations efficiently."
+    },
+    "NEWBORN_CARE":{
+      "TITLE":"Newborn Care",
+      "SUMMARY":"Comprehensive care for newborns, ensuring their health, safety, and proper medical follow-up from the first moments of life."
+    },
+    "SURGICAL_OPERATIONS_IN_ALL_SPECIALTIES":{
+      "TITLE":"Surgical Operations in All Specialties",
+      "SUMMARY":"A wide range of surgical procedures performed by experienced specialists using modern medical techniques and equipment."
+    },
+    "HEART_CARE_OPEN_HEART_SURGERIES":{
+      "TITLE":"Heart Care & Open Heart Surgeries",
+      "SUMMARY":"Specialized cardiac care services, including diagnosis, treatment, and advanced open-heart surgeries provided by expert heart surgeons."
     }
   }
 }
